@@ -38,8 +38,7 @@ int main()
 ```
 
 ##### Explanation :
-We initialise two variables(current_max and max_so_far) with the first element of the array. And then we traverse the array through each element.
-The current_max will get updated with the maximum value of (j'th element,current_max+jth element) : This helps us to leave the old sub array which gives less value compared to the new sub array. At the same time, the maximum of all time will be tracked in the max_so_far variable,... compared with the current_max in every iteration.
+We initialise two variables(current_max and max_so_far) with the first element of the array. And then we traverse the array through each element. The current_max will get updated with the maximum value of (j'th element,current_max+jth element) : This helps us to leave the old sub array which gives less value compared to the new sub array. At the same time, the maximum of all time will be tracked in the max_so_far variable,... compared with the current_max in every iteration.
 
 ```Expln_output
 Current_max of iteration 1 : 2
