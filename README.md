@@ -111,3 +111,17 @@ pr  = float(input())
 a = (pr * (pab *(1-pmb) + pmb*(1-pab))) 
 print('%.6f'%a)
 ```
+
+Probability of intersection of two events can be written as product of prob. of event a occurs and prob. of event b occurs while event a already occured.
+
+[Question](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/bayes-rules-conditional-probability-chain-rule/tutorial/)
+
+```python
+pct = float(input())
+pot = float(input())
+n = float(input())
+x = (1-pct)*(pot) + ((2/n)*pct)
+print('%.6f' % x)
+```
+
+[Answer Comment Expn](www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/bayes-rules-conditional-probability-chain-rule/tutorial/?scroll-id=comments-563-77&scroll-trigger=inview#c97676)
