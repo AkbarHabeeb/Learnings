@@ -73,3 +73,41 @@ Answer :20
 [Link - Question](https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0)
 
 [Link - Video](https://www.youtube.com/watch?v=OexQs_cYgAQ)
+
+
+## Day 2
+#### Machine Learning (1)
+
+Trial or Experiment : The act that leads to a result with certain possibility.
+Sample space        : The set of all possible outcomes of an experiment.
+Event               : Non empty subset of sample space is known as event.
+
+**Complement** of a probabilty(P(a)) will be given by : (1 - P(a))
+
+**Mutually exclusive**  : Any two events are mutually exclusive when they have non-overlapping outcomes. if A and B are two mutually exclusive events then intersection of a and b will be zero.
+
+Eg : Prob. of getting a queen from a deck of cards and prob. of getting a king.
+
+**Independent**         : Any two events are independent of each other if one has zero effect on the other i.e. the occurrence of one event doe not affect the occurrence of the other. If A and B are two independent events then, the intersection two events will be _product of probability of two events_. 
+
+Eg : prob. of getting a red ball from bag 1 and prob. of gettig a black ball from bag 2.
+
+#### Marginal Probability 
+The probability of an event occurring (p(A)), it may be thought of as an unconditional probability. It is not conditioned on another event. Exapmle : The probability that a card drawn is red (p(red) = 0.5).  Another example:  the probability that a card drawn is a 4  (p(four)=1/13).
+
+#### Joint Probability
+The probability of event A **and** event B occurring.  It is the probability of the intersection of two or more events.  The probability of the intersection of A and B may be written p(A ∩ B). Example: The probability that a card is a four and red =p(four and red) = 2/52 = 1/26.
+
+#### Conditional Probability
+P(A|B) is the probability of event A occurring, given that event B occurs. Example:  given that you drew a red card, what’s the probability that it’s a four (p(four|red))=2/26=1/13.  So out of the 26 red cards (given a red card), there are two fours so 2/26=1/13.
+
+[Question Link](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/basic-probability-models-and-rules/tutorial/)
+
+```python 3
+#Output
+pmb = float(input())
+pab = float(input())
+pr  = float(input())
+a = (pr * (pab *(1-pmb) + pmb*(1-pab))) 
+print('%.6f'%a)
+```
