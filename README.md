@@ -103,7 +103,7 @@ P(A|B) is the probability of event A occurring, given that event B occurs. Examp
 
 [Question Link](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/basic-probability-models-and-rules/tutorial/)
 
-```python 3
+```python
 #Output
 pmb = float(input())
 pab = float(input())
