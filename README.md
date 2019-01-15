@@ -139,7 +139,7 @@ print('%.6f' %ans)
 ```
 
 ### Numpy Tutorial
-Go through teh code along with the comments
+Go through the code along with the comments
 ```python
 #15-Jan-2019
 #Spyder_IDE [numpy]
@@ -281,5 +281,6 @@ print(np.vstack([a,    [ [10,10,10] ]    ]))
 # [ 4  5  6]
 # [10 10 10]]
 ```
-Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :heart:
+Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :Heart:
+
 [Link to HacerEarth](https://www.hackerearth.com/practice/machine-learning/data-manipulation-visualisation-r-python/tutorial-data-manipulation-numpy-pandas-python/tutorial/)
