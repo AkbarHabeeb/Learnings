@@ -281,6 +281,6 @@ print(np.vstack([a,    [ [10,10,10] ]    ]))
 # [ 4  5  6]
 # [10 10 10]]
 ```
-Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :Heart:
+Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :heart: :heart:
 
 [Link to HacerEarth](https://www.hackerearth.com/practice/machine-learning/data-manipulation-visualisation-r-python/tutorial-data-manipulation-numpy-pandas-python/tutorial/)
