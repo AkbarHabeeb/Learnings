@@ -101,6 +101,7 @@ The probability of event A **and** event B occurring.  It is the probability of 
 #### Conditional Probability
 P(A|B) is the probability of event A occurring, given that event B occurs. Example:  given that you drew a red card, what’s the probability that it’s a four (p(four|red))=2/26=1/13.  So out of the 26 red cards (given a red card), there are two fours so 2/26=1/13.
 
+
 [Question Link](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/basic-probability-models-and-rules/tutorial/)
 
 ```python
@@ -112,11 +113,13 @@ a = (pr * (pab *(1-pmb) + pmb*(1-pab)))
 print('%.6f'%a)
 ```
 
+
 Probability of intersection of two events can be written as product of prob. of event a occurs and prob. of event b occurs while event a already occured.
 
 [Question](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/bayes-rules-conditional-probability-chain-rule/tutorial/)
 
 ```python
+#output
 pct = float(input())
 pot = float(input())
 n = float(input())
@@ -124,4 +127,14 @@ x = (1-pct)*(pot) + ((2/n)*pct)
 print('%.6f' % x)
 ```
 
-[Answer Comment Expn](www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/bayes-rules-conditional-probability-chain-rule/tutorial/?scroll-id=comments-563-77&scroll-trigger=inview#c97676)
+[Answer Explanation](www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/bayes-rules-conditional-probability-chain-rule/tutorial/?scroll-id=comments-563-77&scroll-trigger=inview#c97676)
+
+
+[Discrete Random Variables](https://www.hackerearth.com/practice/machine-learning/prerequisites-of-machine-learning/discrete-random-variables/tutorial/)
+```python
+#output
+n = float(input())
+ans = (n/((1-n)**2))
+print('%.6f' %ans)
+```
+
