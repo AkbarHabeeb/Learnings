@@ -138,3 +138,148 @@ ans = (n/((1-n)**2))
 print('%.6f' %ans)
 ```
 
+### Numpy Tutorial
+Go through teh code along with the comments
+```python
+#15-Jan-2019
+#Spyder_IDE [numpy]
+
+#Importing the library. 'as np' was a short form to use, similiar to alias.
+import numpy as np
+
+#It creates a list wgich contains 0 to n-1 
+# A list can have data of different type
+l = list(range(5))
+print(l)
+#output (o/p)
+# [0, 1, 2, 3, 4]
+
+#List Comprehension
+# We can do any operation on each element of the list, using the below structure. 
+[print(i,end=" ") for i in l]
+#(o/p) : 0 1 2 3 4 
+#Equivalent of :
+#for i in l:
+#    print(i,end=" ")
+#It is a kind of for each loop
+
+#Creating an array of size 2*2 with all values as 1.54
+a = np.full((2,2),1.54)
+print(a)
+# o/p
+#[[ 1.54  1.54]
+# [ 1.54  1.54]]
+
+#Creating an array of size 2*2 of type int with all values as 0
+a = np.zeros((2,2),dtype=int)
+print(a)
+# o/p : 
+# [[0 0],
+#  [0 0]]
+
+#Creating an array of size 3*3 of type int with all values as 1
+a = np.ones((3,3),dtype=int)
+print(a)
+# o/p
+#[[1 1 1]
+# [1 1 1]
+# [1 1 1]]
+
+#Creating an array which has elements in equal interval of 1.5
+a = np.arange(10,20,1.5,dtype=float)
+print(a)
+# o/p
+# [ 10.   11.5  13.   14.5  16.   17.5  19. ]
+
+#To create an array which holds data between any interval. Here between 0 and 1. Dividing it into 5 intervals
+a = np.linspace(0, 1, 5)
+print(a)
+# o/p : [ 0.    0.25  0.5   0.75  1.  ]
+
+#To create a 2*2 array with mean 0 and standard deviation 1 in a given dimension
+a = np.random.normal(0, 1, (2,2))
+print(a)
+# o/p
+#[[-0.80851921  2.15236423]
+# [-2.6210142  -0.34512231]]
+
+
+#To create an identity matrix
+a = np.eye(2,dtype=int)
+print(a)
+# o/p :
+# [[1 0]
+# [0 1]]
+
+#self_explanatory
+a = np.random.randint(100,200)
+b = np.random.randint(10,20,size=(3,3))
+print(a,b)
+# o/p:
+# 112 [[11 16 17]
+# [17 18 11]
+# [15 19 18]]
+
+
+print(b.ndim) # Gives the dimension of b
+print(b.size) 
+print(b.shape)
+# o/p :
+# 2
+# 9
+# (3, 3)
+
+#Creating an array
+a = np.array([1, 2, 3, 4])
+print(a)
+# o/p : [1 2 3 4]
+#Indexing starts at 0
+print(a[0],a[-4],a[1],a[-3],a[2],a[-2],a[3],a[-1])
+#a[-1] will give the last element from the array. a[-2] gives second last
+
+a = np.array([[1,2],[3,4]])
+print(a[1][1],a[1,1])
+# o/p : 4 4
+# Both a[1][1] and a[1,1] is valid
+# Negative nos works the same way in python
+
+
+
+#Array Slicing
+a = np.arange(10)
+print(a)        #Entire array  (a[:])       [0 1 2 3 4 5 6 7 8 9]
+print(a[:6])    #Starting to 5th position   [0 1 2 3 4 5]
+print(a[3:])    #3rd to last position       [3 4 5 6 7 8 9]
+print(a[2:8])   #2nd to 7th position        [2 3 4 5 6 7]
+print(a[::-1])  #reversing the array        [9 8 7 6 5 4 3 2 1 0] 
+# Above method was costiler because, the shallow(duplicate) copy of array will be used, 
+# which will be using the reference from the original array
+print(a[::3])   #Printing only the every third element [0 3 6 9]
+print(a[2::3])  #Hop by 3                   [2 5 8]
+
+b = np.concatenate([a,a])
+print(b) #o/p : [0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9]
+
+a = np.array([[1,2,3],[4,5,6]])
+print(np.concatenate([a,a]))       
+# [[1 2 3]
+# [4 5 6]
+# [1 2 3]
+# [4 5 6]]                 
+print(np.concatenate([a,a],axis=1))       
+#[[1 2 3 1 2 3]
+# [4 5 6 4 5 6]]
+# Axis can be used only for 2 or more dim matrix
+# concatenate will work fine only for same dim matrix
+print(np.hstack([a,    [ [10], [10] ]    ]))
+# o/p:
+#[[ 1  2  3 10]
+# [ 4  5  6 10]]
+print(np.vstack([a,    [ [10,10,10] ]    ]))
+# o/p:
+#[[ 1  2  3]
+# [ 4  5  6]
+# [10 10 10]]
+```
+Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :heart:
+[Link to HacerEarth](https://www.hackerearth.com/practice/machine-learning/data-manipulation-visualisation-r-python/tutorial-data-manipulation-numpy-pandas-python/tutorial/)
