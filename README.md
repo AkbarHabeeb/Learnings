@@ -281,6 +281,13 @@ print(np.vstack([a,    [ [10,10,10] ]    ]))
 # [ 4  5  6]
 # [10 10 10]]
 ```
-Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. :heart: :heart:
+Here is the wonderful source for getting started with pandas and numpy. Thanks a lot to HackerEarth. 
 
 [Link to HacerEarth](https://www.hackerearth.com/practice/machine-learning/data-manipulation-visualisation-r-python/tutorial-data-manipulation-numpy-pandas-python/tutorial/)
+
+
+## Day 3
+
+-Today, I gone through the **Bishop book for Pattern Recognition and Machine Learning**. Pg No : 137 - 141
+-Networked with LLVM people
+-Started implementing a Caculator Interpreter (Using Lex and Yacc)
