@@ -288,6 +288,6 @@ Here is the wonderful source for getting started with pandas and numpy. Thanks a
 
 ## Day 3
 
--Today, I gone through the **Bishop book for Pattern Recognition and Machine Learning**. Pg No : 137 - 141
--Networked with LLVM people
--Started implementing a Caculator Interpreter (Using Lex and Yacc)
+- Today, I gone through the **Bishop book for Pattern Recognition and Machine Learning**. Pg No : 137 - 141
+- Networked with LLVM people
+- Started implementing a Caculator Interpreter (Using Lex and Yacc)
