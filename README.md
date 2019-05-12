@@ -389,3 +389,59 @@ int main()
     return 0;
 }
 ```
+
+## Day 5
+
+**Deletion in a linked list**
+#### Deletion
+- Delete the beginning node
+- Delete the final node
+- Delete the specified position node
+
+```c++
+//It needs the position of the list to be deleted
+void deleteNode(struct ListNode **head, int position)
+{
+    int k = 1;
+    struct ListNode *p,*q;
+    if(*head == NULL)
+    {
+        cout<<"Empty List";
+        return;
+    }
+    p = *head;  //We need it for pointing it after edleting in the middle.
+    if(position==1)
+    {
+        *head = (*head)->next;  
+        //We use (*head)->next bcoz we are trying to access the List, which is passed as a double pointer.
+        free(p);
+    }
+    else
+    {
+        while(p!=NULL && k < position)
+        {
+            k++;
+            q = p;
+            p = p->next;
+        }
+        q->next = p->next;
+        free(p);
+    }
+    return;
+}
+```
+
+**Deleting the entire list**
+```c++
+void deleteList(struct ListNode **head)
+{
+    struct ListNode *iterator = *head;
+    while(iterator != NULL)
+    {
+        *head = (*head)->next;
+        free(iterator);
+        iterator = *head;
+    }
+    *head = NULL;
+}
+```
