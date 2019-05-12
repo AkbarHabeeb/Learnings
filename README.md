@@ -291,3 +291,101 @@ Here is the wonderful source for getting started with pandas and numpy. Thanks a
 - Today, I gone through the **Bishop book for Pattern Recognition and Machine Learning**. Pg No : 137 - 141
 - Networked with LLVM people
 - Started implementing a Caculator Interpreter (Using Lex and Yacc)
+
+
+## Day 4
+Linked List
+Arrays will have the great advantage of spatial locality. This will benifit them from the easy fast access.(Good caching methods) 
+- Wasted memory in Dynamic array will be O(n) - In worst case
+- Wasted memory in array will be 0
+- Wasted memory in list will be O(n)
+
+**Linked List**
+```c++
+struct ListNode
+{
+    int data;
+    struct ListNode *next;
+}
+```
+**Basic Operations in the list**
+- Insertion
+- Deletion
+
+**auxillary operations in the list**
+- Traversing
+- Deleting the entire list
+- Length of the list
+
+#### Insertion
+- Insertion at the beginning
+- Insertion at middle
+- Insertion at end of the list
+
+we need to update the first element pointer(head) in the entire program not just in the called function. So it will be passed using double pointer (pointer to pointer). It helps to maintain the changes in the original location.
+
+**Linked List program for insertion**
+```c++
+#include <bits/stdc++.h> 
+using namespace std; 
+struct ListNode
+{
+    int data;
+    struct ListNode *next;
+};
+
+void insert(struct ListNode **head, int data, int position)
+{
+    int k = 1;
+    struct ListNode *p,*q,*newNode;
+    newNode = (struct ListNode *)malloc(sizeof(struct ListNode));
+    if(!newNode)
+    {
+        cout<<"Error";
+        return;
+    }
+    p = *head;  //We need it, while insert at the middle
+    newNode->data = data;
+    if(position==1)
+    {
+        newNode->next = *head;
+        *head = newNode;
+    }
+    else
+    {
+        while(p!=NULL && k < position)
+        {
+            k++;
+            q = p;
+            p = p->next;
+        }
+        q->next = newNode;
+        newNode->next = p;
+    }
+    return;
+}
+
+void printList(struct ListNode *head)
+{
+    if(head == NULL)    
+    {
+        cout<<"Empty List";
+    }
+    while(head != NULL)
+    {
+        cout<<head->data<<" ";
+        head = head->next;
+    }
+}
+
+int main()
+{
+    struct ListNode *head = NULL;
+    insert(&head,1,1);
+    insert(&head,2,2);
+    insert(&head,3,3);
+    insert(&head,4,4);
+    printList(head);
+    return 0;
+}
+```
