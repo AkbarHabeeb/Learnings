@@ -445,3 +445,16 @@ void deleteList(struct ListNode **head)
     *head = NULL;
 }
 ```
+**Length of a Linked List**
+```c++
+int ListLength(struct ListNode *head)
+{
+    int count = 0;
+    while(head != NULL)
+    {
+        head = head->next;
+        count++;
+    }
+    return count;
+}
+```
