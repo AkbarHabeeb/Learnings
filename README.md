@@ -458,3 +458,139 @@ int ListLength(struct ListNode *head)
     return count;
 }
 ```
+
+**searching an element in singly list : Iterative**
+```c++
+bool search(struct ListNode *head, int data)
+{
+    if(head == NULL)
+    {
+        return false;
+    }
+    while(head != NULL)
+    {
+        if(head->data == data)
+            return true;
+        else
+        {
+            head = head->next;
+        }
+    }
+    return false;
+}
+```
+**searching an element in singly list : Recursive**
+```c++
+bool searchRecursive(struct ListNode *head, int data)
+{
+    if(head == NULL)
+    {
+        return false;
+    }
+    if(head->data == data)
+        return true;
+    else
+        searchRecursive(head->next,data);
+    //In searchRecursive there shld be recursion elimination condition
+    //and No return at the end.
+}
+```
+
+#### Difference between C and C++ in list implementation
+List structure _C_
+```c
+struct ListNode
+{
+    int data;
+    struct ListNode *next;
+};
+```
+List structure _C++_
+```c++
+class ListNode
+{
+    public:
+    int data;
+    ListNode *next;
+};
+```
+Initialising the node structure:
+```c++
+//C
+struct ListNode *p = (struct ListNode *)malloc(sizeof(struct ListNode));
+//c++
+ListNode *p = new ListNode();
+```
+**Getting the Nth node from beginning**
+Indexing starts at 1
+If we are choosing recursive method, then the index value should get decremented everytime
+```c++
+int getNthElement(struct ListNode *head, int index)
+{
+    int count = 1;
+    while(head != NULL)
+    {
+        if(count == index)
+            return head->data;
+        count++;
+        head = head->next;
+    }
+    assert(0); //It will abort the program assert.h
+    //return '$';   Bad idea
+}
+```
+**Getting the Nth node from last** (Using the length of the liked List)
+Indexing starts at 1
+```c++
+int NthNodefromEnd(struct ListNode *head,int index)
+{
+    int length = ListLength(head);
+    length = length - index + 1; //Indexing starts from 1 
+    int count = 1 ;
+    while(head != NULL)
+    {
+        if(count == length)
+            return head->data;
+        count++;
+        head = head->next;
+    }
+    assert(0);
+}
+
+//Function call will be 
+cout<<NthNodefromEnd(head,6)<<endl;  
+cout<<NthNodefromEnd(head,1)<<endl;
+//We cant give the position as 0 since index starts at 1, and for index greater the the available the program will abort.
+```
+
+(Using 2 pointers)
+- point1 will be moved to N node from start
+- Then, both point1 and point2 will be moved one by one until the point1 reaches the end.
+- Now the data will be there in the point2's data
+```c++
+int NthNodefromEnd(struct ListNode *head , int index)
+{
+    struct ListNode *point1 = head;
+    struct ListNode *point2 = head;
+    int count = 1;
+    while(point1 != NULL)
+    {
+        if(count == index)
+            break;
+        point1 = point1->next;
+        count++;
+    }
+    while(point2 != NULL)
+    {
+        if(point1->next == NULL)  
+        //Rather than using the next == NULL, we can make the previous while loop to run 
+        //one time lesser. ie. count < index ...
+        {
+            return point2->data;
+        }
+        point1 = point1->next;
+        point2 = point2->next;
+    }
+    assert(0);
+}
+```
