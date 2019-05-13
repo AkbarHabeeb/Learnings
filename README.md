@@ -622,3 +622,117 @@ int middleNode(struct ListNode *head)
     return mid->data;
 }
 ```
+
+**Doubly Linked List**
+Insertion
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+struct DListNode
+{
+    int data;
+    struct DListNode *prev;
+    struct DListNode *next;
+};
+
+void insert(struct DListNode **head, int data, int position)
+{
+    int k = 1;
+    struct DListNode *temp, *newNode;
+    newNode = (struct DListNode *)malloc(sizeof(struct DListNode));
+    if(!newNode)
+    {
+        cout<<"Error";
+        return;
+    }
+    newNode->data = data;
+    if(position == 1)
+    {
+        newNode->next = *head;
+        newNode->prev = NULL;
+        if(*head)
+            (*head)->prev = newNode;            //Used when there is already nodes in the list
+        *head = newNode;
+        return;
+    }
+    temp = *head;
+    while(k < (position -1) && temp->next != NULL)  
+    //position -1 is important bcoz, it helps us to handle the 
+    //insertion at the end
+    {
+        k++;
+        temp = temp->next;
+    }
+    newNode->next = temp->next;
+    newNode->prev = temp;
+    if(temp->next)                              //Used when we are not inserting at the end of the list
+        temp->next->prev = newNode;
+    temp->next = newNode;
+    return;
+}
+
+void printDList(struct DListNode *head)
+{
+    if(head == NULL)
+    {
+        cout<<"Empty List";
+    }
+    while(head != NULL)
+    {
+        cout<<head->data;
+        head = head->next;
+    }
+    return;
+}
+
+int main() 
+{
+    struct DListNode *head = NULL;
+    insert(&head,1,1);
+    insert(&head,2,2);
+    insert(&head,3,3);
+    insert(&head,4,4);
+    insert(&head,5,5);
+    insert(&head,6,6);
+    printDList(head);
+    return 1;
+}
+```
+
+**Deletion in Doubly linked List**
+```c++
+void deleteList(struct DListNode **head, int position)
+{
+    int k = 1;
+    struct DListNode *temp,*temp2;
+    if(*head == NULL)
+    {
+        cout<<"Empty List";
+        return;
+    }
+    temp = *head;
+    if(position == 1)
+    {
+        *head = (*head)->next;
+        if(*head != NULL)
+        {
+            (*head)->prev = NULL;
+        }
+        free(temp);
+        return;
+    }
+    while(k < position && temp->next != NULL)
+    {
+        k++;
+        temp = temp->next;
+    }
+    temp2 = temp->prev;  //Storing the value
+    temp2->next = temp->next;
+    if(temp->next)
+        temp->next->prev = temp2;
+    free(temp);
+    return;
+}
+```
+
