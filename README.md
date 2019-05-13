@@ -594,3 +594,31 @@ int NthNodefromEnd(struct ListNode *head , int index)
     assert(0);
 }
 ```
+**Middle node of the List**
+We can find th emiddle Node using the following ways
+1. Find the length of the node and return the count/2 th node
+2. Use two pointers to traverse the node (1 Jump and 2 Jump)
+3.Traverse the list, move to the next node only for odd number node's. So that, when hed reaches the end, we would have moved just the half distance.
+Method 3:
+```c++
+int middleNode(struct ListNode *head)
+{
+    int count = 0;
+    struct ListNode *mid = head;
+    while(head != NULL)
+    {
+        if(count%2 == 1)
+        {
+            mid = mid->next;
+            head = head->next;
+            count++;
+        }
+        else
+        {
+            head = head->next;
+            count++;
+        }
+    }
+    return mid->data;
+}
+```
