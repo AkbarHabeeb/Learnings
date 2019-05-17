@@ -736,3 +736,6 @@ void deleteList(struct DListNode **head, int position)
 }
 ```
 
+## Day 6
+Completed the interactive course on Kaggle.
+(Introduction to ML, Seaborn, Intermediate Machine Learning)
