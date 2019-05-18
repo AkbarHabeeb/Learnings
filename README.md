@@ -739,3 +739,7 @@ void deleteList(struct DListNode **head, int position)
 ## Day 6
 Completed the interactive course on Kaggle.
 (Introduction to ML, Seaborn, Intermediate Machine Learning)
+
+## Day 7
+Read 45 pages about Web scraping using python. (BeautifulSoap library)
+I did this, since I am need of web scraping technology to get data for my cricket world cup predictor model.
